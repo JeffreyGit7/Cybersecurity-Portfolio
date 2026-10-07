@@ -5,10 +5,11 @@ Hi, I'm Jeffrey. This repo documents my path into cybersecurity: the lab I've bu
 ## Where I'm at
 
 - Working towards CompTIA Security+ (targeting end of October 2026)
-- Actively working through TryHackMe rooms
-- Hold the Google Cybersecurity Professional Certificate
-- Cisco CCNA
+- Hold the Google Cybersecurity Professional Certificate and Cisco CCNA
 - Completed the TryHackMe "Cyber Security 101" learning path
+- Targeting SOC Analyst roles first, with GRC as a longer-term direction
+- Two rooms documented so far: [Network Services 1](TryHackMe%20Labs/Network%20Services%201.md) (SMB/Telnet/FTP enumeration and exploitation) and [SOC L1 Alert Triage](TryHackMe%20Labs/SOC%20L1%20Alert%20Triage.md) (live alert investigation and verdict-writing in a SIEM dashboard)
+- More TryHackMe rooms and a Splunk/SIEM investigation project in progress
 
 ## What's in here
 
