@@ -42,21 +42,39 @@ which is the order I worked them in.
 - **Alert context:** Flagged a large volume of outbound traffic — 5.8 GB — from an internal host (192.168.45.66).
 - **Investigation:** Reviewed the traffic context in the alert details to determine what the data volume actually represented.
 - **Verdict:** **False positive.** The traffic was legitimate Zoom (video conferencing) traffic, not exfiltration — a large data volume alone isn't suspicious once the application generating it is identified.
-- **Analyst comment logged:** "Alert triggered by 5.8 GB Zoom traffic from 192.168.45.66 — activity is legitimate, marking as false positive."
+
+![Verdict panel for the Potential Data Exfiltration alert, closed as False Positive with analyst comment](images/soc-l1-alert-triage/01-data-exfiltration-verdict.png)
+*Figure 1: Closing the Data Exfiltration alert as a false positive, with the Zoom traffic explanation logged as the analyst comment.*
 
 ### 2. Double-Extension File Creation (High)
 
 - **Alert context:** Detected creation of a double-extension file (`cats2025.mp4.exe`) — a pattern commonly used in phishing to disguise an executable as a harmless media file. Host: `LPT-HR-009`. Process: `chrome.exe`. Process user: `S.Conway`. The file was downloaded to `C:\Users\S.Conway\Downloads\` from an external URL.
+
+![Alert detail panel for Double-Extension File Creation showing host, process, target file, and file hash](images/soc-l1-alert-triage/02-double-extension-alert-detail.png)
+*Figure 2: Alert details — the double-extension file, download source, and the MD5 hash used for the VirusTotal lookup.*
+
 - **Investigation:** Pulled the file's MD5 hash (`14d8486f3f63875ef93cfd240c5dc10b`) from the alert and checked it against **VirusTotal**. The result showed **49 of 72 security vendors** flagging the file as malicious, with a consistent trojan classification across multiple vendors (labelled variously as `Trojan.MSIL`/`Trojan.Win32`/`Spyware.Infostealer` family).
+
+![VirusTotal scan result showing 49 of 72 vendors flagging the file hash as malicious](images/soc-l1-alert-triage/03-virustotal-result.png)
+*Figure 3: VirusTotal result for the file hash — 49/72 vendors flagged it malicious, with a consistent trojan classification.*
+
 - **Verdict:** **True positive.** The double-extension technique, the suspicious download source, and the VirusTotal detection rate together left no reasonable doubt.
-- **Analyst comment logged:** "User S.Conway on LPT-HR-009 downloaded cats2025.mp4.exe from a suspicious URL. File hash (MD5: 14d8486f3f63875ef93cfd240c5dc10b) shows multiple detections on VirusTotal. Confirmed true positive — quarantine file, scan host, and follow up with user."
+
+![Verdict panel for Double-Extension File Creation, closed as True Positive with analyst comment](images/soc-l1-alert-triage/04-double-extension-verdict.png)
+*Figure 4: Closing the alert as a true positive, with the VirusTotal evidence and remediation steps logged.*
 
 ### 3. Download from GitHub Repository (Low)
 
 - **Alert context:** Flagged a download from GitHub, a platform the IT team legitimately uses but one that can also be abused to deliver malicious scripts. Source user: `G.Chandler`. Source host: `LPT-IT-063`. Source network: the developer VPN. Repository accessed: `facebook/react`.
+
+![Alert detail panel for Download from GitHub Repository showing accessed URL, user, host, and network](images/soc-l1-alert-triage/05-github-download-alert-detail.png)
+*Figure 5: Alert details — the accessed repository, source user, host, and network segment.*
+
 - **Investigation:** Checked the repository and user context — a developer, on the developer VPN, pulling a widely-used, legitimate open-source project.
 - **Verdict:** **False positive.** The combination of user role, network segment, and a well-known legitimate repository pointed clearly to routine developer activity rather than malicious tooling retrieval.
-- **Analyst comment logged:** "User G.Chandler accessed GitHub (facebook/react) from development VPN. Legitimate activity — marking as false positive. No further action needed."
+
+![Verdict panel for Download from GitHub Repository, closed as False Positive with analyst comment](images/soc-l1-alert-triage/06-github-download-verdict.png)
+*Figure 6: Closing the alert as a false positive, with the developer-VPN context logged as justification.*
 
 ## Key findings
 
@@ -73,14 +91,12 @@ which is the order I worked them in.
 
 ## What I learned
 
-<!-- Draft below — edit into your own voice. -->
-
 The clearest lesson from this room was that triage is a judgment call built
-on context, not a lookup table — the same action (a large transfer, a file
+on context, not a lookup table. The same action (a large transfer, a file
 download) can be completely benign or a confirmed compromise depending on
 who did it, from where, and what else is known about the file or traffic
 involved. Pulling the suspicious file's hash and checking it against
-VirusTotal was the single most useful habit I picked up here — it turned
+VirusTotal was the single most useful habit I picked up here. It turned
 a "this looks odd" alert into a defensible, evidence-backed verdict in
 under a minute, which is exactly the kind of fast, confident decision-making
 a SOC L1 role actually requires.
