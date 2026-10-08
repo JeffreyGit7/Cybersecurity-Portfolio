@@ -72,22 +72,11 @@ trusted the network more than it should have.
 ## Defensive takeaways
 
 - **SMB:** Disable anonymous and guest access, enforce SMB signing, disable SMBv1, and restrict shares to least privilege. Enumeration tools like `enum4linux` only work because unauthenticated users are allowed to ask these questions in the first place.
-- **Telnet:** Telnet transmits everything — including credentials — in cleartext, and "hiding" a service on a non-standard port is not a substitute for securing it. Replace it with SSH; if it must remain for legacy reasons, restrict it to a management VLAN and alert on connection attempts.
+- **Telnet:** Telnet transmits everything, including credentials, in cleartext, and "hiding" a service on a non-standard port is not a substitute for securing it. Replace it with SSH; if it must remain for legacy reasons, restrict it to a management VLAN and alert on connection attempts.
 - **FTP:** Disable anonymous login unless there's a genuine business need for it. Use SFTP or FTPS instead of plain FTP, enforce strong passwords with lockout/rate-limiting to blunt brute-force attempts, and don't expose FTP directly to the internet.
 - **Across all three:** Run only the services actually needed, patch and update regularly, segment the network so a compromised service doesn't expose everything else, and log authentication attempts so repeated failures (like a Hydra run) get flagged rather than going unnoticed.
 
 ## What I learned
 
-<!-- Draft below — edit this into your own voice and adjust anything that
-doesn't match how you'd actually put it. -->
-
-The biggest lesson here didn't come from the target machine at all — it
-came from getting my own attack environment working on Windows instead of
-a pre-built Linux AttackBox. Tool installation, driver issues, and even
-antivirus false-positives on security tools are things a lot of writeups
-skip over, but they're a realistic part of doing this work outside a
-sandboxed lab. On the target side, the Telnet section was the most
-instructive: running a full port-range scan instead of relying on
-defaults was the only reason that service was found at all, which
-reinforced that thorough enumeration matters more than clever
-exploitation.
+The biggest lesson here came from getting my own attack environment working on Windows instead of a pre-built Linux AttackBox. Tool installation, driver issues, and even antivirus false-positives on security tools are things a lot of writeups
+skip over, but they're a realistic part of doing this work outside a sandboxed lab. On the target side, the Telnet section was the most instructive: running a full port-range scan instead of relying on defaults was the only reason that service was found at all, which reinforced that thorough enumeration matters more than clever exploitation.
