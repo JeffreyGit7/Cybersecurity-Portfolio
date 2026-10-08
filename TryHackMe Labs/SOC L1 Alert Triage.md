@@ -73,14 +73,12 @@ which is the order I worked them in.
 
 ## What I learned
 
-<!-- Draft below — edit into your own voice. -->
-
 The clearest lesson from this room was that triage is a judgment call built
-on context, not a lookup table — the same action (a large transfer, a file
+on context, not a lookup table. The same action (a large transfer, a file
 download) can be completely benign or a confirmed compromise depending on
 who did it, from where, and what else is known about the file or traffic
 involved. Pulling the suspicious file's hash and checking it against
-VirusTotal was the single most useful habit I picked up here — it turned
+VirusTotal was the single most useful habit I picked up here. It turned
 a "this looks odd" alert into a defensible, evidence-backed verdict in
 under a minute, which is exactly the kind of fast, confident decision-making
 a SOC L1 role actually requires.
