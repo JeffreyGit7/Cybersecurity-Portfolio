@@ -20,6 +20,6 @@ Hi, I'm Jeffrey. This repo documents my path into cybersecurity: the lab I've bu
 
 ## Why I'm doing this
 
-I want my first role in cybersecurity, and I'd rather show the work than just list certifications. Everything in this repo is stuff I actually did myself, including the mistakes and how I fixed them.
+I am aiming to land my first role in cybersecurity, and I think it's important to show my work rather than just list certifications. 
 
-More is being added as I go through TryHackMe rooms and finish Security+.
+More is being added as I go through TryHackMe rooms and complete my Security+ certification.
