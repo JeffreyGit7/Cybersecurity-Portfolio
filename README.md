@@ -4,7 +4,7 @@ Hi, I'm Jeffrey. This repo documents my path into cybersecurity: the lab I've bu
 
 ## Where I'm at
 
-- Working towards CompTIA Security+ (targeting end of October 2026)
+- Finished studying for CompTIA Security+; sitting the exam as soon as I have the exam fee covered
 - Hold the Google Cybersecurity Professional Certificate and Cisco CCNA
 - Completed the TryHackMe "Cyber Security 101" learning path
 - Targeting SOC Analyst roles first, with GRC as a longer-term direction
@@ -22,4 +22,4 @@ Hi, I'm Jeffrey. This repo documents my path into cybersecurity: the lab I've bu
 
 I am aiming to land my first role in cybersecurity, and I think it's important to show my work rather than just list certifications.
 
-More is being added as I go through TryHackMe rooms and complete my Security+ certification.
+More is being added as I go through TryHackMe rooms and work towards sitting the Security+ exam.
