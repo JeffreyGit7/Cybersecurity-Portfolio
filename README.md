@@ -8,15 +8,15 @@ Hi, I'm Jeffrey. This repo documents my path into cybersecurity: the lab I've bu
 - Hold the Google Cybersecurity Professional Certificate and Cisco CCNA
 - Completed the TryHackMe "Cyber Security 101" learning path
 - Targeting SOC Analyst roles first, with GRC as a longer-term direction
-- Two rooms documented so far: [Network Services 1](TryHackMe%20Labs/Network%20Services%201.md) (SMB/Telnet/FTP enumeration and exploitation) and [SOC L1 Alert Triage](TryHackMe%20Labs/SOC%20L1%20Alert%20Triage.md) (live alert investigation and verdict-writing in a SIEM dashboard)
+- Two rooms documented so far: [Network Services 1](https://github.com/JeffreyGit7/Cybersecurity-Portfolio/blob/main/TryHackMe%20Labs/Network%20Services%201.md) (SMB/Telnet/FTP enumeration and exploitation) and [SOC L1 Alert Triage](https://github.com/JeffreyGit7/Cybersecurity-Portfolio/blob/main/TryHackMe%20Labs/SOC%20L1%20Alert%20Triage.md) (live alert investigation and verdict-writing in a SIEM dashboard)
 - Finished a Splunk SIEM detection project and an Nmap + OpenVAS vulnerability assessment; more TryHackMe rooms in progress
 
 ## What's in here
 
-- **[Home Lab](Home%20Lab/Lab%20Setup.md)** - How I set up my practice environment (Kali Linux + Metasploitable 2 on VirtualBox), including the real troubleshooting I ran into along the way
-- **[TryHackMe Labs](TryHackMe%20Labs/)** - Writeups from rooms I've completed, covering methodology and what I learned, not just the final flag
-- **[SOC-SIEM Project](SOC-SIEM%20Project/README.md)** - Splunk detection alerts built from my lab's authentication logs, including the problems I hit and how I fixed them
-- **[Vulnerability Assessment](Vulnerability%20Assessment/README.md)** - Nmap and OpenVAS against Metasploitable 2: 31 findings (27 confirmed), a comparison of the two tools, and a fix-first list
+- **[Home Lab](https://github.com/JeffreyGit7/Cybersecurity-Portfolio/blob/main/Home%20Lab/Lab%20Setup.md)** - How I set up my practice environment (Kali Linux + Metasploitable 2 on VirtualBox), including the real troubleshooting I ran into along the way
+- **[TryHackMe Labs](https://github.com/JeffreyGit7/Cybersecurity-Portfolio/tree/main/TryHackMe%20Labs)** - Writeups from rooms I've completed, covering methodology and what I learned, not just the final flag
+- **[SOC-SIEM Project](https://github.com/JeffreyGit7/Cybersecurity-Portfolio/blob/main/SOC-SIEM%20Project/README.md)** - Splunk detection alerts built from my lab's authentication logs, including the problems I hit and how I fixed them
+- **[Vulnerability Assessment](https://github.com/JeffreyGit7/Cybersecurity-Portfolio/blob/main/Vulnerability%20Assessment/README.md)** - Nmap and OpenVAS against Metasploitable 2: 31 findings (27 confirmed), a comparison of the two tools, and a fix-first list
 
 ## Why I'm doing this
 
