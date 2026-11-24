@@ -1,6 +1,6 @@
 # Cybersecurity Portfolio
 
-Hi, I'm Jeffrey. This repo documents my path into cybersecurity: the lab I've built, what I'm learning, and the hands-on work I'm doing to back it up.
+Hi, I'm Jeffrey. This repo documents my path into cybersecurity: the home lab I've built, what I'm learning, and the hands-on work I'm doing to back it up.
 
 ## Where I'm at
 
